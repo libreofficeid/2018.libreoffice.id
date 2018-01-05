@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LibreOffice Indonesia Mini Conference</title>
+    <title>LibreOffice Conference Indonesia 2018</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,9 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Leaflet -->
+    <link href="vendor/leaflet/leaflet.css" rel="stylesheet">
     
   </head>
 
@@ -30,21 +33,27 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!--div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link js-scroll-trigger" href="/">Beranda
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#tentang">Tentang</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#tempat">Tempat</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+            <li class="nav-item active" >
+              <a class="nav-link js-scroll-trigger" href="#cfp">CFP</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#sponsor">Sponsor</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#kontak">Kontak</a>
             </li>
           </ul>
         </div-->
@@ -56,7 +65,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="header-text text-center text-white mt-4">LibreOffice Indonesia Mini Conference</h1>
+            <h1 class="header-text text-center text-white mt-4 d-none d-sm-block">LibreOffice Conference Indonesia 2018</h1>
+            <h3 class="text-center text-white mt-4 d-none d-sm-block">Surabaya, 23-25 Maret 2018</h3>
+            <h1 class="text-center text-white mt-5 d-block d-sm-none">LibreOffice Conference Indonesia 2018</h1>
+            <h5 class="text-center text-white mt-2 d-block d-sm-none">Surabaya, 23-25 Maret 2018</h5>
           </div>
         </div>
       </div>
@@ -65,107 +77,139 @@
     <!-- Page Content -->
     <div class="container">
 
-      <!--div class="row">
-        <div class="col-sm-8">
-          <h2 class="mt-4">What We Do</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-          <p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
-          </p>
-        </div>
-        <div class="col-sm-4">
-          <h2 class="mt-4">Contact Us</h2>
-          <address>
-            <strong>Start Bootstrap</strong>
-            <br>3481 Melrose Place
-            <br>Beverly Hills, CA 90210
-            <br>
-          </address>
-          <address>
-            <abbr title="Phone">P:</abbr>
-            (123) 456-7890
-            <br>
-            <abbr title="Email">E:</abbr>
-            <a href="mailto:#">name@example.com</a>
-          </address>
-        </div>
-      </div-->
+      <div class="row" id="tentang">
+		<div class="col-sm-12">
+			<h3 class="my-5 text-center">Tentang<hr></h3>
+			<h4 class="mt-4 text-center">“Ajang berkumpul penggiat dan pengguna LibreOffice yang mengutamakan kontribusi nyata pada kemajuan kemerdekaan perangkat lunak.”</h4>
+		</div>
+      </div>
       <!-- /.row -->
-	
-	  <h3 class="my-4 text-center">Sponsor</h3>
-	  <hr>
-      <div class="row">
-        <div class="col-sm-4 my-4">
-            <a href="http://ridon.id/"  target="_blank">
-				<img class="card-img-top" src="img/sponsor/ridon.svg" alt="ridon">            
-            </a>
+      <div class="row" id="tempat">
+		<div class="col-sm-12">
+			<h3 class="my-5 text-center">Tempat<hr></h3>
+		</div>
+        <div class="col-sm-8 mt-4">
+			<div id="mapid"></div>
         </div>
-        <div class="col-sm-4 my-4">
-            <a href="http://www.fans.co.id/"  target="_blank">
+        <div class="col-sm-4 mt-4">
+          <address>
+            <strong>Politeknik Elektronika Negeri Surabaya (PENS)</strong>
+            <br>Jl. Raya ITS - Kampus PENS Sukolilo
+            <br>Surabaya 60111, INDONESIA
+            <br>
+            <a href="http://www.pens.ac.id/page/akses-ke-pens">Akses ke PENS</a>
+          </address>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row" id="cfp">
+		<div class="col-sm-12">
+			<h3 class="my-5 text-center">Call for Paper<hr></h3>
+			<h4 class="my-4 text-center"><span class="badge badge-success">Segera</span></h4>
+		</div>
+      </div>
+      <!-- /.row -->
+	  <div class="row" id="sponsor">
+		<div class="col-sm-4 col-md-4 my-4">
+		</div>
+		<div class="col-sm-4 col-md-4 my-4">
+			<h3 class="my-4 text-center">Diselenggarakan oleh<hr></h3>
+				<img class="card-img-top mx-auto" src="img/sponsor/Logo-LibreOfficeID.svg" alt="libreoffice-id">
+			<h4 class="my-4 text-center green"><b>Komunitas LibreOffice Indonesia</b></h4>
+			<h4 class="my-4 text-center">bekerja sama dengan</h4>
+		</div>
+		<div class="col-sm-4 col-md-4 my-4">
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-sm-2 my-4"></div>
+		<div class="col-sm-4 my-4">
+			<a href="http://www.pens.ac.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/pens.svg" alt="pens">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="http://www.rad.net.id/v2/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/radnet.svg" alt="radnet">
+			</a>
+		</div>
+		<div class="col-sm-2 my-4"></div>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-12 my-4">
+			<h3 class="my-4 text-center">Disponsori oleh<hr></h3>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-sm-4 my-4">
+			<a href="http://www.fans.co.id/"  target="_blank">
 				<img class="card-img-top" src="img/sponsor/fans.svg" alt="fans">
-            </a>
-        </div>
-        <div class="col-sm-4 my-4">
-            <a href="https://klas.or.id/"  target="_blank">
-				<img class="card-img-top" src="img/sponsor/klas.svg" alt="klas">
-            </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 my-4">
-            <a href="https://opensuse.id/"  target="_blank">
-				<img class="card-img-top" src="img/sponsor/openSUSE-ID.svg" alt="openSUSE-ID">
-            </a>
-        </div>
-        <div class="col-sm-4 my-4">
-            <a href="https://glibogor.or.id/"  target="_blank">
-				<img class="card-img-top" src="img/sponsor/glib.svg" alt="glib">
-            </a>
-        </div>
-        <div class="col-sm-4 my-4">
-            <a href="http://imgos-belajarlinux.blogspot.co.id/"  target="_blank">
-				<img class="card-img-top" src="img/sponsor/istana.svg" alt="istana media">
-            </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 my-4">
-            <a href="http://tatalogam.com/"  target="_blank">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="http://tatalogam.com/"  target="_blank">
 				<img class="card-img-top" src="img/sponsor/tatalogam.svg" alt="tata logam">
-            </a>
-        </div>
-        <div class="col-sm-4 my-4">
-            <a href="https://www.btech.id/"  target="_blank">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="https://www.btech.id/"  target="_blank">
 				<img class="card-img-top" src="img/sponsor/btech.svg" alt="btech">
-            </a>
-        </div>
-        <div class="col-sm-4 my-4">
-            <a href="https://www.facebook.com/OSC.PENS/"  target="_blank">
+			</a>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-12 my-4">
+			<h3 class="my-4 text-center">Didukung oleh<hr></h3>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-sm-4 my-4">
+			<a href="https://klas.or.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/klas.svg" alt="klas">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="https://www.facebook.com/OSC.PENS/"  target="_blank">
 				<img class="card-img-top" src="img/sponsor/osc-pens.svg" alt="osc-pens">
             </a>
-        </div>
-      </div>
-      <!--div class="row">
-        <div class="col-sm-4 my-4">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        </div>
-        <div class="col-sm-4 my-4">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        </div>
-        <div class="col-sm-4 my-4">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        </div>
-      </div-->
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="http://ridon.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/ridon.svg" alt="ridon">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="https://opensuse.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/openSUSE-ID.svg" alt="openSUSE-ID">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="https://glibogor.or.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/glib.svg" alt="glib">
+			</a>
+		</div>
+		<div class="col-sm-4 my-4">
+			<a href="http://imgos-belajarlinux.blogspot.co.id/"  target="_blank">
+				<img class="card-img-top" src="img/sponsor/istana.svg" alt="istana media">
+			</a>
+		</div>
+	  </div>
       <!-- /.row -->
-
+      <div class="row" id="kontak">
+		<div class="col-sm-12">
+			<h3 class="my-4 text-center">Kontak</h3>
+			<hr>
+			<p class="my-4 text-center">Humas LibreOffice ID: <a href="mailto:humas@libreoffice.id">humas@libreoffice.id</a></p>
+		</div>
+      </div>
     </div>
+    
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 footer-bg">
       <div class="container">
-        <p class="m-0 text-center text-white">&copy; 2017 <a href="http://libreoffice.id/">LibreOffice.id</a></p>
+        <p class="m-0 text-center text-white">&copy; 2018 <a href="http://libreoffice.id/">LibreOffice.id</a></p>
       </div>
       <!-- /.container -->
     </footer>
@@ -174,6 +218,43 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Plugin -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Leaflet -->
+    <script src="vendor/leaflet/leaflet.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/libreoffice-id.min.js"></script>
+
+    <!-- Map -->
+	<script>
+
+		var mymap = L.map('mapid').setView([-7.2767636,112.7949036,15], 15);
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'mapbox.streets'
+		}).addTo(mymap);
+
+		L.marker([-7.2767636, 112.7949036]).addTo(mymap)
+			.bindPopup("Politeknik Elektronika Negeri Surabaya (PENS)").openPopup();
+
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked the map at " + e.latlng.toString())
+				.openOn(mymap);
+		}
+
+		mymap.on('click', onMapClick);
+
+	</script>
   </body>
 
 </html>

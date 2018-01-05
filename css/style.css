@@ -1,3 +1,4 @@
+/* Body */
 body {
   padding-top: 54px;
 }
@@ -8,6 +9,7 @@ body {
   }
 }
 
+/* Header */
 .page-header {
   height: 50vh;
   min-height: 300px;
@@ -18,14 +20,6 @@ body {
   -o-background-size: cover;
 }
 
-.card {
-  height: 100%;
-}
-
-.footer-bg {
-	background-color:#292D2F;
-}
-
 .header-text {
   padding-top: 30px;
   font-weight: 700;
@@ -34,4 +28,31 @@ body {
   color: #FFFFFF;
   margin: 0;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+/* Line */
+hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: #00A500;
+  border-radius: 15px; 
+}
+
+hr.light {
+  border-color: #fff; 
+}
+
+/* Card */
+.card {
+  height: 100%;
+}
+
+/* Footer */
+.footer-bg {
+  background-color:#292D2F;
+}
+
+/* Map */
+#mapid { 
+  height: 180px; 
 }
