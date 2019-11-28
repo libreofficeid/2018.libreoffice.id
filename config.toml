@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
+baseURL = "https://libreOffice.id/"
 languageCode = "id-id"
 title = "Komunitas LibreOffice Indonesia"
 theme = "navigator-hugo"
@@ -57,21 +57,19 @@ DefaultContentLanguage = "id"
         description = "bersama Komunitas LibreOffice Indonesia."
         button  = true
         btnText = "Selanjutnya"
-        btnURL  = "https://themefisher.com/"
-        videoThumb = "images/slider/video-player-thumb.jpg"
-        videoURL   = "https://www.youtube.com/embed/g3-VxLQO7do"
+        btnURL  = "https://libreOffice.id/"
 
     # About 2 Section
     [Languages.id.params.aboutSm]
         enable  = true
-        title   = "FRANCAIS We have explored the digital landscape with passion for a long time"
+        title   = "Tentang Kami"
         description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae deleniti ipsa labore necessitatibus culpa veritatis quo accusantium, neque enim ea ad eaque iure, quas tempore velit, quibusdam dolor illo! Explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quisquam maiores iste soluta, nihil dolorem?"
 
     # Blog Section On Homepage
     [Languages.id.params.blog]
         enable  = true
-        topTitle= "OUR UNTOLD STORY"
-        title   = "FRANCAIS Blog."
+        topTitle= "Postingan Terkini"
+        title   = "Blog Komunitas LibreOffice Indonesia."
         subtitle= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum reiciendis quasi itaque, obcaecati atque sit!"
 
     # Contact Section
@@ -125,8 +123,6 @@ DefaultContentLanguage = "id"
         button  = true
         btnText = "Know More"
         btnURL  = "https://themefisher.com/"
-        videoThumb = "images/slider/video-player-thumb.jpg"
-        videoURL   = "https://www.youtube.com/embed/g3-VxLQO7do"
 
     # About 2 Section
     [Languages.en.params.aboutSm]
@@ -195,16 +191,16 @@ DefaultContentLanguage = "id"
 
     # Footer Service Menu
     [[menu.service]]
-        name    = "graphicdesign"
-        url     = "service"
+        name    = "Lumbung"
+        url     = "https://lumbung.libreOffice.id"
         weight  = 1
     [[menu.service]]
-        name    = "webdesign"
-        url     = "service"
+        name    = "Glosarium"
+        url     = "https://glosarium.libreOffice.id"
         weight  = 2
     [[menu.service]]
-        name    = "webdevelopment"
-        url     = "service"
+        name    = "Dokumentasi"
+        url     = "https://github.com/libreofficeid"
         weight  = 3
 
     # Footer Quick links Menu
